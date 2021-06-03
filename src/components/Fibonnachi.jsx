@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Styles from './Style.module.css';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import FibonnachiPrompt from './FibbonachiPrompt';
@@ -14,13 +14,16 @@ function fibonacciSequence(num, memo) {
 
 const Fibonnachi = () => {
   let { num } = useParams();
-  if (!num) {
-    num = localStorage.getItem('lastNum') ? localStorage.getItem('lastNum') : 1;
-  }
+  let history = useHistory();
+
   const [fiboNum, setFiboNum] = useState(num);
   const [isPromptOpen, setIsPromptOpen] = useState(false);
 
   useEffect(() => {
+    if (!num) {
+      num = localStorage.getItem('lastNum') ? localStorage.getItem('lastNum') : 1;
+      return history.push(`/${num}`);
+    }
     setFiboNum(fibonacciSequence(num));
     setIsPromptOpen(false);
     localStorage.setItem('lastNum', num);
