@@ -1,0 +1,63 @@
+body {
+  overflow: hidden;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.fibonnachiWrapper {
+  border: 1px solid black;
+  display: flex;
+  margin: 0 auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.linksWrapper {
+  display: flex;
+  min-width: 30%;
+  margin-block: 3rem;
+  justify-content: space-evenly;
+}
+
+.PromptBtn {
+  padding: 15px;
+  background-color: indigo;
+  color: white;
+  font-weight: 600;
+}
+
+.promptWrapper {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100vw;
+  display: flex;
+  height: 100vh;
+  background-color: #1515157a;
+  flex-direction: column;
+}
+
+.promptContainer {
+  width: 50%;
+  height: 50%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promptInput {
+  max-width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .linksWrapper {
+    min-width: 50%;
+  }
+}
